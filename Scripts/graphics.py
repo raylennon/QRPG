@@ -10,9 +10,9 @@ def frame(pos, dir, images):
     frame = bg.crop((pos[0]-30, pos[1]-17, pos[0]+34, pos[1]+15)).convert('RGB')
     w, h = player.size
     if dir=="left" or dir =="lu" or dir =="ld":
-        pp = player.crop((0,0,int(w/4)-1,h-1))
+        pp = player.crop((0,0,int(w/4),h-1))
     elif dir=="right" or dir=="ru" or dir=="rd":
-        pp = player.crop((int(w/2),0,int(3*w/4)-1,h-1))
+        pp = player.crop((int(w/2),0,int(3*w/4),h-1))
     elif dir=="up":
         pp = player.crop((int(3*w/4),0,w-1,h-1))
     else:
