@@ -23,7 +23,7 @@ overlay = Image.open('../Game Images/Misc/Exclamation-Overlay.png')
 images = [bg, player, sublevel, overlay]
 
 global position
-position = [bg.width/2, bg.height/2]
+position = [int(bg.width/2), int(bg.height/2)]
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Options for RGB Matrix; appears to work well. Remember to run with "sudo" to avoid flickering
