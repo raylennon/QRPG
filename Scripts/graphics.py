@@ -1,4 +1,7 @@
 from PIL import Image
+import cv2
+from rgbmatrix import RGBMatrix, RGBMatrixOptions
+import time
 
 # player character is 6 pixels high by 4 pixels wide
 # bottom left corner is located at (30, 17)
@@ -53,3 +56,17 @@ def checkvalidmove(direction, pos, sublevel):
             return False
         else:
             return newpos
+
+def displaycutscene(name, matrix):
+    filepath = '../Assets/Cutscenes/'+name+'.mp4'
+    cap= cv2.VideoCapture('filepath')
+    i=0
+    while(cap.isOpened()):
+        ret, frame = cap.read()
+        if ret == False:
+            break
+        matrix.SetImage(frame)
+        i+=1
+        time.sleep(0.1)
+    cap.release()
+    cv2.destroyAllWindows()
