@@ -8,14 +8,15 @@ def frame(pos, dir, images):
     (bg, player, sb, overlay) = images
 
     frame = bg.crop((pos[0]-30, pos[1]-17, pos[0]+34, pos[1]+15)).convert('RGB')
+    w, h = player.size
     if dir=="left" or dir =="lu" or dir =="ld":
-        pp = player.crop((0,0,3,5))
+        pp = player.crop((0,0,int(w/4)-1,h-1))
     elif dir=="right" or dir=="ru" or dir=="rd":
-        pp = player.crop((8,0,11,5))
+        pp = player.crop((int(w/2),0,int(3*w/4)-1,h-1))
     elif dir=="up":
-        pp = player.crop((13,0,15,5))
+        pp = player.crop((int(3*w/4),0,w-1,h-1))
     else:
-        pp = player.crop((4,0,7,5))
+        pp = player.crop((int(w/4),0,int(w/2)-1,h-1))
     frame.paste(pp.convert('RGB'), (30,17), pp.convert('RGBA'))
 
     print(pos)
