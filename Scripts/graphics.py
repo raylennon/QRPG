@@ -47,4 +47,8 @@ def checkvalidmove(direction, pos, sublevel):
             newpos = [pos[0] -1, pos[1] + 1]
         elif direction == 'rd':
             newpos = [pos[0] +1, pos[1] + 1]
-        return newpos
+        
+        if not sublevel.convert('RGB').getpixel((pos[0], pos[1])) == (0,0,0):
+            return False
+        else:
+            return newpos
