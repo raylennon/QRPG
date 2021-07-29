@@ -16,7 +16,7 @@ def frame(pos, dir, images):
         pp = player.crop((13,0,15,5))
     else:
         pp = player.crop((4,0,7,5))
-    frame.paste(pp, (30,17), pp)
+    frame.paste(pp.convert('RGB'), (30,17), pp.convert('RGBA'))
 
     print(pos)
     print(sb.size)
