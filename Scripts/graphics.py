@@ -19,7 +19,7 @@ def frame(pos, dir, images):
     frame.paste(pp, (30,17), pp.convert('RGBA'))
 
     print(pos)
-    print(sb.shape)
+    print(sb.size)
     if not sb.convert('RGB').getpixel((pos[0], pos[1])) == (0, 0, 0):
         frame.paste(overlay, (0,0), overlay)
 
