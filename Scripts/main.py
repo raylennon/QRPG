@@ -46,8 +46,8 @@ matrix.SetImage(graphics.frame(position,'up', images),0,0)
 
 app = flask.Flask(__name__,
                 static_url_path='',
-                static_folder='/../Web Interface/static',
-                template_folder='/../Web Interface/templates')
+                static_folder='../Web Interface/static',
+                template_folder='../Web Interface/templates')
 
 validmoves = ['left','right','up','down','lu','ru','ld','rd']
 
