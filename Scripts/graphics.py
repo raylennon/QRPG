@@ -7,7 +7,7 @@ def frame(pos, dir, images):
 
     (bg, player, sb, overlay) = images
 
-    frame = bg.crop((pos[0]-30, pos[1]-17, pos[0]+34, pos[1]+15))
+    frame = bg.crop((pos[0]-30, pos[1]-17, pos[0]+34, pos[1]+15)).convert('RGB')
     if dir=="left" or dir =="lu" or dir =="ld":
         pp = player.crop((0,0,3,5))
     elif dir=="right" or dir=="ru" or dir=="rd":
