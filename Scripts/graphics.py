@@ -5,7 +5,7 @@ from PIL import Image
 
 def frame(pos, dir, images):
 
-    (bg, sb, player, overlay) = images
+    (bg, player, sublevel, overlay) = images
 
     frame = bg.crop((pos[0]-30, pos[1]-17, pos[0]+34, pos[1]+15))
     if dir=="left" or dir =="lu" or dir =="ld":
