@@ -1,5 +1,5 @@
 from PIL import Image
-import cv2
+#import cv2
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 import time
 
