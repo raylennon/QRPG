@@ -61,6 +61,7 @@ def checkvalidmove(direction, pos, sublevel):
 def displaycutscene(name, matrix):
     filepath = '../Assets/Cutscenes/'+name
     images = [f for f in listdir(filepath) if isfile(join(filepath, f))]
+    images.sort(key=int)
     for image in images:
         frame = Image.open(filepath + '/' + image)
         matrix.Clear()

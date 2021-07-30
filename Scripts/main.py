@@ -81,4 +81,5 @@ def command(cmd=None):
 
 if __name__ == "__main__":
     graphics.displaycutscene('intro', matrix)
+    matrix.SetImage(createqrcode.make())
     app.run(host="0.0.0.0", debug=False, threaded=True)
