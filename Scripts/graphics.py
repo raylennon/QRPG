@@ -62,7 +62,7 @@ def displaycutscene(name, matrix):
     filepath = '../Assets/Cutscenes/'+name
     images = [f for f in listdir(filepath) if isfile(join(filepath, f))]
     for image in images:
-        frame = Image.open(image)
+        frame = Image.open(filepath + '/' + image)
         matrix.Clear()
         matrix.SetImage(frame)
         time.sleep(0.1)
