@@ -41,7 +41,6 @@ options.drop_privileges = False
 
 global matrix
 matrix = RGBMatrix(options = options)
-matrix.SetImage(graphics.frame(position,'up', images),0,0)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 app = flask.Flask(__name__,
@@ -69,6 +68,8 @@ def command(cmd=None):
     response = cmd.lower()
 
     if response == 'esc':
+        global started
+        started = False
         matrix.Clear()
         matrix.SetImage(createqrcode.make())
         return "esc", 200, {'Content-Type': 'text/plain'}
