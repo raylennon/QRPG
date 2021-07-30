@@ -1,5 +1,6 @@
 from PIL import Image
-#import cv2
+from os import listdir
+from os.path import isfile, join
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 import time
 
@@ -58,15 +59,10 @@ def checkvalidmove(direction, pos, sublevel):
             return newpos
 
 def displaycutscene(name, matrix):
-    filepath = '../Assets/Cutscenes/'+name+'.mp4'
-    cap= cv2.VideoCapture('filepath')
-    i=0
-    while(cap.isOpened()):
-        ret, frame = cap.read()
-        if ret == False:
-            break
+    filepath = '../Assets/Cutscenes/'+name
+    images = [f for f in listdir(filepath) if isfile(join(filepath, f))]
+    for image in images:
+        frame = Image.open(image)
+        matrix.Clear()
         matrix.SetImage(frame)
-        i+=1
         time.sleep(0.1)
-    cap.release()
-    cv2.destroyAllWindows()
