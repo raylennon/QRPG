@@ -105,11 +105,25 @@
                 clearInterval(dtimeout);
             });
 
+            var centertimeout, centerclicker = $('#centerclicker');
+            $('#centerclicker').on('touchstart', function() {
+                    var request = new XMLHttpRequest();
+                    centertimeout = setInterval(function(){
+                        request.open("GET", "/ESC", true);
+                        request.send();
+                    }, delay);
+                    return false;
+            });
+            $('#centerclicker').on('click touchend', function(event) {
+                clearInterval(centertimeout);
+            });
+
             $(document).mouseup(function(){
                 clearInterval(ltimeout);
                 clearInterval(rtimeout);
                 clearInterval(utimeout);
                 clearInterval(dtimeout);
+                clearInterval(centertimeout)
                 return false;
             });
 
