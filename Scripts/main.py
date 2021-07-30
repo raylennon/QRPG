@@ -80,5 +80,5 @@ def command(cmd=None):
     return response, 200, {'Content-Type': 'text/plain'}
 
 if __name__ == "__main__":
-    graphics.displaycutscene('introsequence', matrix)
+    graphics.displaycutscene('intro', matrix)
     app.run(host="0.0.0.0", debug=False, threaded=True)
