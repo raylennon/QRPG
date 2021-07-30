@@ -66,5 +66,5 @@ def displaycutscene(name, matrix):
         frame = Image.open(filepath + '/' + image)
         matrix.Clear()
         matrix.SetImage(frame)
-        #time.sleep(0.5)
+        time.sleep(0.05)
     return
