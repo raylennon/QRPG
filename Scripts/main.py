@@ -65,10 +65,10 @@ def root():
 def command(cmd=None):
     global matrix
     global position
+    global started
     response = cmd.lower()
 
     if response == 'esc':
-        global started
         started = False
         matrix.Clear()
         matrix.SetImage(createqrcode.make())
