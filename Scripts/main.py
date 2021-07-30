@@ -51,8 +51,15 @@ app = flask.Flask(__name__,
 
 validmoves = ['left','right','up','down','lu','ru','ld','rd']
 
+global started
+started = False
+
 @app.route("/")
 def root():
+    global started
+    if not started:
+        graphics.displaycutscene('intro', matrix)
+    started = True
     return flask.render_template("index.html")
 
 @app.route('/<cmd>')
@@ -80,6 +87,5 @@ def command(cmd=None):
     return response, 200, {'Content-Type': 'text/plain'}
 
 if __name__ == "__main__":
-    graphics.displaycutscene('intro', matrix)
     matrix.SetImage(createqrcode.make())
     app.run(host="0.0.0.0", debug=False, threaded=True)
