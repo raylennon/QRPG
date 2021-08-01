@@ -16,10 +16,10 @@ current_level = "Demo Scene"
 
 # load all of the images into memory for speed purposes?
 
-bg = Image.open('../Assets/Levels/' + current_level + '/background.png')
-player = Image.open('../Assets/Misc/Player.png')
-sublevel = Image.open('../Assets/Levels/' + current_level + '/Sublevel.png')
-overlay = Image.open('../Assets/Misc/Exclamation-Overlay.png')
+bg = Image.open(os.path.abspath('../Assets/Levels/' + current_level + '/background.png'))
+player = Image.open(os.path.abspath('../Assets/Misc/Player.png'))
+sublevel = Image.open(os.path.abspath('../Assets/Levels/' + current_level + '/Sublevel.png'))
+overlay = Image.open(os.path.abspath('../Assets/Misc/Exclamation-Overlay.png'))
 
 # decrease the number of method arguments later...
 images = [bg, player, sublevel, overlay]
