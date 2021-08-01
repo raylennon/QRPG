@@ -59,7 +59,7 @@ def checkvalidmove(direction, pos, sublevel):
             return newpos
 
 def displaycutscene(name, matrix):
-    filepath = abspath('QRPG/Assets/Cutscenes/')+name
+    filepath = abspath('QRPG/Assets/Cutscenes/')+name+'/'
     images = [f for f in listdir(filepath) if isfile(join(filepath, f))]
     images.sort()
     for image in images:
