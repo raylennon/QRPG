@@ -13,7 +13,7 @@ def make():
     ip_address = check_output(['hostname', '-I'])[:-2].decode()
     full_ip_address = 'http:/' + ip_address + ':5000/'
 
-    qrbase = Image.open('home/pi/QRPG/Assets/Misc/QR_BASE.png')
+    qrbase = Image.open('/home/pi/QRPG/Assets/Misc/QR_BASE.png')
 
     qr = qrcode.QRCode(
         version = 2,
