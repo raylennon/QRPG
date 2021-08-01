@@ -1,6 +1,7 @@
 from PIL import Image
 from subprocess import check_output
 import qrcode
+import os
 
 '''
 This script generates a QR code based on the 
@@ -12,7 +13,7 @@ def make():
     ip_address = check_output(['hostname', '-I'])[:-2].decode()
     full_ip_address = 'http:/' + ip_address + ':5000/'
 
-    qrbase = Image.open('~/QRPG/Assets/Misc/QR_BASE.png')
+    qrbase = Image.open(os.path.abspath('../Assets/Misc/QR_BASE.png'))
 
     qr = qrcode.QRCode(
         version = 2,

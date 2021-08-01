@@ -1,6 +1,6 @@
 from PIL import Image
 from os import listdir
-from os.path import isfile, join
+from os.path import isfile, join, abspath
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 import time
 
@@ -59,7 +59,7 @@ def checkvalidmove(direction, pos, sublevel):
             return newpos
 
 def displaycutscene(name, matrix):
-    filepath = '~/QRPG/Assets/Cutscenes/'+name
+    filepath = abspath('../Assets/Cutscenes/')+name
     images = [f for f in listdir(filepath) if isfile(join(filepath, f))]
     images.sort()
     for image in images:
