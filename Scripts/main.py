@@ -16,10 +16,10 @@ current_level = "Demo Scene"
 
 # load all of the images into memory for speed purposes?
 
-bg = Image.open(os.path.abspath('QRPG/Assets/Levels/' + current_level + '/background.png'))
-player = Image.open(os.path.abspath('QRPG/Assets/Misc/Player.png'))
-sublevel = Image.open(os.path.abspath('QRPG/Assets/Levels/' + current_level + '/Sublevel.png'))
-overlay = Image.open(os.path.abspath('QRPG/Assets/Misc/Exclamation-Overlay.png'))
+bg = Image.open('home/pi/QRPG/Assets/Levels/' + current_level + '/background.png')
+player = Image.open('home/pi/QRPG/Assets/Misc/Player.png')
+sublevel = Image.open('home/pi/QRPG/Assets/Levels/' + current_level + '/Sublevel.png')
+overlay = Image.open('home/pi/QRPG/Assets/Misc/Exclamation-Overlay.png')
 
 # decrease the number of method arguments later...
 images = [bg, player, sublevel, overlay]
@@ -47,8 +47,8 @@ matrix = RGBMatrix(options = options)
 
 app = flask.Flask(__name__,
                 static_url_path='',
-                static_folder=os.path.abspath('QRPG/Web Interface/static'),
-                template_folder=os.path.abspath('QRPG/Web Interface/templates'))
+                static_folder='home/pi/QRPG/Web Interface/static',
+                template_folder='home/pi/QRPG/Web Interface/templates')
 
 validmoves = ['left','right','up','down','lu','ru','ld','rd']
 
