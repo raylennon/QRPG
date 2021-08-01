@@ -47,8 +47,8 @@ matrix = RGBMatrix(options = options)
 
 app = flask.Flask(__name__,
                 static_url_path='',
-                static_folder=os.path.abspath('../Web Interface/static'),
-                template_folder=os.path.abspath('../Web Interface/templates'))
+                static_folder=os.path.abspath('QRPG/Web Interface/static'),
+                template_folder=os.path.abspath('QRPG/Web Interface/templates'))
 
 validmoves = ['left','right','up','down','lu','ru','ld','rd']
 
