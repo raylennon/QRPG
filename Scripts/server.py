@@ -72,6 +72,7 @@ def command(cmd=None):
 
     if response == 'esc':
         started = False
+        position = [int(bg.width/2), int(bg.height/2)]
         matrix.Clear()
         matrix.SetImage(createqrcode.make())
         return "esc", 200, {'Content-Type': 'text/plain'}
