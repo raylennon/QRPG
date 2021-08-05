@@ -65,6 +65,6 @@ def displaycutscene(name, matrix):
     for image in images:
         frame = Image.open(filepath + '/' + image)
         matrix.Clear()
-        matrix.SetImage(frame)
+        matrix.SetImage(frame.convert('RGB'))
         time.sleep(0.05)
     return
