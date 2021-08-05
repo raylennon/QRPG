@@ -12,7 +12,7 @@ import graphics
 
 import os
 
-current_level = "Demo Scene"
+current_level = "Largegar"
 
 # load all of the images into memory for speed purposes?
 
