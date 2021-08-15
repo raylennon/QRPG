@@ -1,7 +1,6 @@
 from PIL import Image
 from os import listdir
 from os.path import isfile, join, abspath
-from rgbmatrix import RGBMatrix, RGBMatrixOptions
 import time
 
 # player character is 6 pixels high by 4 pixels wide
@@ -59,7 +58,7 @@ def checkvalidmove(direction, pos, sublevel):
             return newpos
 
 def displaycutscene(name, matrix):
-    filepath = '/home/pi/QRPG/Assets/Cutscenes/'+ name
+    filepath = '../Assets/Cutscenes/'+ name
     images = [f for f in listdir(filepath) if isfile(join(filepath, f))]
     images.sort()
     for image in images:

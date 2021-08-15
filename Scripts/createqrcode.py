@@ -3,6 +3,8 @@ from subprocess import check_output
 import qrcode
 import os
 
+import platform
+debug = (platform.platform()[0:7]=="Windows")
 '''
 This script generates a QR code based on the 
 Raspberry Pi's ip address, and overlays it
@@ -10,10 +12,14 @@ onto the decorative background
 '''
 
 def make():
-    ip_address = check_output(['hostname', '-I'])[:-2].decode()
+    if not debug:
+        ip_address = check_output(['hostname', '-I'])[:-2].decode()
+    else:
+        import socket
+        ip_address = socket.gethostbyname(socket.gethostname())
     full_ip_address = 'http:/' + ip_address + ':5000/'
 
-    qrbase = Image.open('/home/pi/QRPG/Assets/Misc/QR_BASE.png')
+    qrbase = Image.open('../Assets/Misc/QR_BASE.png')
 
     qr = qrcode.QRCode(
         version = 2,
