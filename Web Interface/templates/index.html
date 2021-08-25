@@ -66,6 +66,7 @@
             });
             $('#lclicker').on('click touchend', function(event) {
                 clearInterval(ltimeout);
+                ltimeout = null;
             });
 
             var rtimeout, rclicker = $('#rclicker');
@@ -81,6 +82,7 @@
             });
             $('#rclicker').on('click touchend', function(event) {
                 clearInterval(rtimeout);
+                rtimeout = null;
             });
 
             var utimeout, uclicker = $('#uclicker');
@@ -96,6 +98,7 @@
             });
             $('#uclicker').on('click touchend', function(event) {
                 clearInterval(utimeout);
+                utimeout = null;
             });
 
             var dtimeout, dclicker = $('#dclicker');
@@ -111,12 +114,13 @@
             });
             $('#dclicker').on('click touchend', function(event) {
                 clearInterval(dtimeout);
+                dtimeout = null;
             });
 
             var centertimeout, centerclicker = $('#centerclicker');
             $('#centerclicker').on('touchstart', function() {
                     var request = new XMLHttpRequest();
-                    if (!timeout) {
+                    if (!centertimeout) {
                         centertimeout = setInterval(function(){
                             request.open("GET", "/ESC", true);
                             request.send();
@@ -126,6 +130,7 @@
             });
             $('#centerclicker').on('click touchend', function(event) {
                 clearInterval(centertimeout);
+                centertimeout = null;
             });
 
             $(document).mouseup(function(){
