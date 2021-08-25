@@ -22,8 +22,6 @@ def frame(pos, dir, images):
         pp = player.crop((int(w/4),0,int(w/2)-1,h-1))
     frame.paste(pp.convert('RGB'), (30,15), pp.convert('RGBA'))
 
-    print(pos)
-    print(sb.size)
     if not sb.convert('RGB').getpixel((pos[0], pos[1])) == (0, 0, 0):
         frame.paste(overlay.convert('RGB'), (0,0), overlay.convert('RGBA'))
 

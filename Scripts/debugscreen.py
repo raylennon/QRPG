@@ -13,7 +13,7 @@ class TestScreen:
         mode = img.mode
         size = img.size
         data = img.tobytes()
-        print(size)
+        
         py_image = pygame.image.fromstring(data, size, mode)
 
         rect = py_image.get_rect()
