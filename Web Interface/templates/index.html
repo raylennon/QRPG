@@ -56,10 +56,12 @@
             var ltimeout, lclicker = $('#lclicker');
             $('#lclicker').on('touchstart', function() {
                     var request = new XMLHttpRequest();
-                    ltimeout = setInterval(function(){
-                        request.open("GET", "/LEFT", true);
-                        request.send();
-                    }, delay);
+                    if (!ltimeout) {
+                        ltimeout = setInterval(function(){
+                            request.open("GET", "/LEFT", true);
+                            request.send();
+                        }, delay);
+                    }
                     return false;
             });
             $('#lclicker').on('click touchend', function(event) {
@@ -69,10 +71,12 @@
             var rtimeout, rclicker = $('#rclicker');
             $('#rclicker').on('touchstart', function() {
                     var request = new XMLHttpRequest();
-                    rtimeout = setInterval(function(){
-                        request.open("GET", "/RIGHT", true);
-                        request.send();
-                    }, delay);
+                    if (!rtimeout) {
+                        rtimeout = setInterval(function(){
+                            request.open("GET", "/RIGHT", true);
+                            request.send();
+                        }, delay);
+                    }
                     return false;
             });
             $('#rclicker').on('click touchend', function(event) {
@@ -81,11 +85,13 @@
 
             var utimeout, uclicker = $('#uclicker');
             $('#uclicker').on('touchstart', function() {
-                    var request = new XMLHttpRequest();
-                    utimeout = setInterval(function(){
-                        request.open("GET", "/UP", true);
-                        request.send();
-                    }, delay);
+                    if (!utimeout) {
+                        var request = new XMLHttpRequest();
+                        utimeout = setInterval(function(){
+                            request.open("GET", "/UP", true);
+                            request.send();
+                        }, delay);
+                    }
                     return false;
             });
             $('#uclicker').on('click touchend', function(event) {
@@ -95,10 +101,12 @@
             var dtimeout, dclicker = $('#dclicker');
             $('#dclicker').on('touchstart', function() {
                     var request = new XMLHttpRequest();
-                    dtimeout = setInterval(function(){
-                        request.open("GET", "/DOWN", true);
-                        request.send();
-                    }, delay);
+                    if (!dtimeout) {
+                        dtimeout = setInterval(function(){
+                            request.open("GET", "/DOWN", true);
+                            request.send();
+                        }, delay);
+                    }
                     return false;
             });
             $('#dclicker').on('click touchend', function(event) {
@@ -108,10 +116,12 @@
             var centertimeout, centerclicker = $('#centerclicker');
             $('#centerclicker').on('touchstart', function() {
                     var request = new XMLHttpRequest();
-                    centertimeout = setInterval(function(){
-                        request.open("GET", "/ESC", true);
-                        request.send();
-                    }, delay);
+                    if (!timeout) {
+                        centertimeout = setInterval(function(){
+                            request.open("GET", "/ESC", true);
+                            request.send();
+                        }, delay);
+                    }
                     return false;
             });
             $('#centerclicker').on('click touchend', function(event) {
