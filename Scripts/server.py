@@ -65,7 +65,8 @@ started = False
 def root():
     global started
     if not started:
-        graphics.displaycutscene('intro', matrix)
+        pass
+        #graphics.displaycutscene('intro', matrix)
     started = True
     return flask.render_template("index.html")
 
