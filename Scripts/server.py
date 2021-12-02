@@ -68,6 +68,7 @@ def root():
         pass
         #graphics.displaycutscene('intro', matrix)
     started = True
+    print("new log!")
     return flask.render_template("index.html")
 
 @app.route('/<cmd>')
