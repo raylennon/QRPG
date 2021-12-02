@@ -1,4 +1,5 @@
 import time
+import threading
 import sys
 
 import platform
@@ -35,6 +36,9 @@ global position
 position = [int(bg.width/2), int(bg.height/2)]
 
 global matrix
+
+global mostrecent
+
 if not debug:
     options = RGBMatrixOptions()
     options.rows = 32
@@ -76,6 +80,12 @@ def command(cmd=None):
     global matrix
     global position
     global started
+
+    global mostrecent
+    mostrecent.cancel()
+    mostrecent.start()
+
+
     response = cmd.lower()
 
     if response == 'esc':
@@ -97,6 +107,8 @@ def command(cmd=None):
     matrix.SetImage(graphics.frame(position,response, images))
 
     return response, 200, {'Content-Type': 'text/plain'}
+
+mostrecent = threading.Timer(45.0, command, ['esc'])
 
 matrix.SetImage(createqrcode.make())
 

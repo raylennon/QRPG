@@ -28,6 +28,7 @@ def frame(pos, dir, images):
     return frame.convert('RGB')
 
 def checkvalidmove(direction, pos, sublevel):
+    print(direction)
     validmoves = ['left','right','up','down','lu','ru','ld','rd']
     newpos = pos[:]
     if not direction in validmoves:
