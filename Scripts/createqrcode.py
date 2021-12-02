@@ -18,7 +18,7 @@ def make():
         import socket
         ip_address = socket.gethostbyname(socket.gethostname())
     #full_ip_address = 'http:/' + ip_address + ':80/'
-    full_ip_address = 'http:/lemurnet.wireless.duke.edu'
+    full_ip_address = 'https://tinyurl.com/srvrlr'
     qrbase = Image.open('../Assets/Misc/QR_BASE.png')
 
     qr = qrcode.QRCode(
