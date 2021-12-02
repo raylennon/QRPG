@@ -82,9 +82,6 @@ def command(cmd=None):
     global started
 
     global mostrecent
-    mostrecent.cancel()
-    mostrecent.start()
-
 
     response = cmd.lower()
 
@@ -94,7 +91,10 @@ def command(cmd=None):
         matrix.Clear()
         matrix.SetImage(createqrcode.make())
         return "esc", 200, {'Content-Type': 'text/plain'}
-
+    else:
+        mostrecent.cancel()
+        mostrecent.start()
+    
     if response == 'center':
         pass
     
