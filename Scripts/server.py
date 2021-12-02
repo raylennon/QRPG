@@ -93,6 +93,7 @@ def command(cmd=None):
         return "esc", 200, {'Content-Type': 'text/plain'}
     else:
         mostrecent.cancel()
+        mostrecent = threading.Timer(45.0, command, ['esc'])
         mostrecent.start()
     
     if response == 'center':
