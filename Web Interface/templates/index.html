@@ -13,77 +13,71 @@
 <body>
     <div class="container" style="width: 100%; height: 100%; position: absolute; text-align: center;">
         <div class="row" style="position: absolute; height: 20%; top:20%; width: 100%">
-            <div class="col">
+
+            <div class="col" style="position: absolute; height: 100%; left: 5%; width: 30%; ">
+            </div>
+            <div class="col" style="position: absolute; height: 100%; left: 35%; width: 30%; ">
+                <div id="uclicker">
+                    <svg version="1.1" id="arrowsymbol" width="100%" height="80%" viewBox="0 0 1 1">
+                        <polygon style="fill:#333;" points="0,1 1,1 0.5,0 " />
+                    </svg>
+
                 </div>
-                <div class="col" style="position: absolute; height: 100%; left: 5%; width: 30%; ">
-                </div>
-                <div class="col" style="position: absolute; height: 100%; left: 35%; width: 30%; ">
-                    <div id="uclicker">
-                        <svg version="1.1" id="arrowsymbol" width="100%" height="80%" viewBox="0 0 1 1">
-                            <polygon style="fill:#333;" points="0,1 1,1 0.5,0 " />
-                        </svg>
-            
-                    </div>
-                </div>
-                <div class="col" style="position: absolute; height: 100%; left: 65%; width: 30%; ">
-                </div>
-                <div class="col">
-                </div>
+            </div>
+            <div class="col" style="position: absolute; height: 100%; left: 65%; width: 30%; ">
+            </div>
+
         </div>
         <div class="row" style="position: absolute; height: 20%; top:40%; width: 100%">
-            <div class="col">
-                </div>
-                <div class="col" style="position: absolute; height: 100%; left: 5%; width: 30%; ">
-                    <div id="lclicker">
-                        <svg version="1.1" id="arrowsymbol" width="100%" height="100%" viewBox="0 0 1 1">
-                            <polygon style="fill:#333;" points="0,0.5 1,0 1,1" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="col" style="position: absolute; height: 100%; left: 35%; width: 30%; ">
-                    <div id="centerclicker">
-                        <svg version="1.1" id="arrowsymbol" width="100%" height="80%">
-                            <circle cx="50%" cy="50%" r="30%" fill="#333" stroke-width="3"></circle>
-                            <text x="50%" y="50%" text-anchor="middle" stroke="none" alignment-baseline="middle" stroke-width="1px" fill="white">Home</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="col" style="position: absolute; height: 100%; left: 65%; width: 30%; ">
-                    <div id="rclicker">
 
-                        <svg version="1.1" id="arrowsymbol" width="100%" height="80%" viewBox="0 0 1 1">
-                            <polygon style="fill:#333;" points="1,0.5 0,0 0,1" />
-                        </svg>
-                
-                    </div>
+            <div class="col" style="position: absolute; height: 100%; left: 5%; width: 30%; ">
+                <div id="lclicker">
+                    <svg version="1.1" id="arrowsymbol" width="100%" height="100%" viewBox="0 0 1 1">
+                        <polygon style="fill:#333;" points="0,0.5 1,0 1,1" />
+                    </svg>
                 </div>
-                <div class="col">
+            </div>
+            <div class="col" style="position: absolute; height: 100%; left: 35%; width: 30%; ">
+                <div id="centerclicker">
+                    <svg version="1.1" id="arrowsymbol" width="100%" height="80%">
+                        <circle cx="50%" cy="50%" r="30%" fill="#333" stroke-width="3"></circle>
+                        <text x="50%" y="50%" text-anchor="middle" stroke="none" alignment-baseline="middle"
+                            stroke-width="1px" fill="white">Home</text>
+                    </svg>
                 </div>
+            </div>
+            <div class="col" style="position: absolute; height: 100%; left: 65%; width: 30%; ">
+                <div id="rclicker">
+                    <svg version="1.1" id="arrowsymbol" width="100%" height="100%" viewBox="0 0 1 1">
+                        <polygon style="fill:#333;" points="1,0.5 0,0 0,1" />
+                    </svg>
+
+                </div>
+            </div>
+
         </div>
         <div class="row" style="position: absolute; height: 20%; top:60%; width: 100%">
-            <div class="col">
-                </div>
-                <div class="col" style="position: absolute; height: 100%; left: 5%; width: 30%; ">
-                </div>
-                <div class="col" style="position: absolute; height: 100%; left: 35%; width: 30%; ">
-                    <div id="dclicker">
 
-                        <svg version="1.1" id="arrowsymbol" width="100%" height="80%" viewBox="0 0 1 1">
-                            <polygon style="fill:#333;" points="0,0 1,0 0.5,1 " />
-                        </svg>
-                
-                    </div>
+            <div class="col" style="position: absolute; height: 100%; left: 5%; width: 30%; ">
+            </div>
+            <div class="col" style="position: absolute; height: 100%; left: 35%; width: 30%; ">
+                <div id="dclicker">
+
+                    <svg version="1.1" id="arrowsymbol" width="100%" height="80%" viewBox="0 0 1 1">
+                        <polygon style="fill:#333;" points="0,0 1,0 0.5,1 " />
+                    </svg>
+
                 </div>
-                <div class="col" style="position: absolute; height: 100%; left: 65%; width: 30%; ">
-                </div>
-                <div class="col">
-                </div>
+            </div>
+            <div class="col" style="position: absolute; height: 100%; left: 65%; width: 30%; ">
+            </div>
+
         </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     <script>
 
@@ -96,6 +90,7 @@
                 ltimeout = setInterval(function () {
                     request.open("GET", "/LEFT", true);
                     request.send();
+                    console.log("left!!!");
                 }, delay);
             }
             return false;
@@ -112,6 +107,7 @@
                 rtimeout = setInterval(function () {
                     request.open("GET", "/RIGHT", true);
                     request.send();
+                    console.log("right!!!");
                 }, delay);
             }
             return false;
@@ -128,6 +124,7 @@
                 utimeout = setInterval(function () {
                     request.open("GET", "/UP", true);
                     request.send();
+                    console.log("up!!!");
                 }, delay);
             }
             return false;
@@ -144,6 +141,7 @@
                 dtimeout = setInterval(function () {
                     request.open("GET", "/DOWN", true);
                     request.send();
+                    console.log("down!!!");
                 }, delay);
             }
             return false;
