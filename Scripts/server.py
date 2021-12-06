@@ -46,7 +46,7 @@ if not debug:
     options.chain_length = 1
     options.parallel = 1
     options.gpio_slowdown = 2
-    options.brightness=100
+    options.brightness=20
     options.hardware_mapping = 'adafruit-hat'
     options.daemon = False
     options.drop_privileges = False
