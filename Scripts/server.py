@@ -52,7 +52,8 @@ if not debug:
     options.drop_privileges = False
     matrix = RGBMatrix(options = options)
 else:
-    matrix = TestScreen((64, 32))
+    resizefac=12
+    matrix = TestScreen((64*resizefac, 32*resizefac))
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 app = flask.Flask(__name__,
@@ -91,14 +92,16 @@ def command(cmd=None):
         matrix.SetImage(createqrcode.make())
         return "esc", 200, {'Content-Type': 'text/plain'}
     else:
-        mostrecent.cancel()
-        mostrecent = threading.Timer(45.0, command, ['esc'])
-        mostrecent.start()
+        pass
+        # mostrecent.cancel()
+        # mostrecent = threading.Timer(45.0, command, ['esc'])
+        # mostrecent.start()
     
     if response == 'center':
         pass
     
     elif response in validmoves:
+        print("gasp")
         newpos = graphics.checkvalidmove(response, position, sublevel)
         if newpos:
             position = newpos[:]
@@ -108,9 +111,16 @@ def command(cmd=None):
 
     return response, 200, {'Content-Type': 'text/plain'}
 
-mostrecent = threading.Timer(45.0, command, ['esc'])
+# mostrecent = threading.Timer(45.0, command, ['esc'])
 matrix.SetImage(createqrcode.make())
+print("okay...")
 
 
-#if __name__ == "__main__":
-#    app.run(host="0.0.0.0", debug=False, threaded=True)
+if __name__ == "__main__":
+    t = threading.Thread(target=app.run, kwargs={"host":"0.0.0.0", 'port':8000, 'debug':True, 'threaded':True, 'use_reloader':False})
+    t.start()
+    # app.run(host="0.0.0.0", port=8000, debug=True, threaded=True, use_reloader=False)
+
+matrix.check()
+
+t.join()
