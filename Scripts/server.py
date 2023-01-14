@@ -117,7 +117,7 @@ print("okay...")
 
 
 if __name__ == "__main__":
-    t = threading.Thread(target=app.run, kwargs={"host":"0.0.0.0", 'port':8000, 'debug':True, 'threaded':True, 'use_reloader':False})
+    t = threading.Thread(target=app.run, kwargs={"host":"0.0.0.0", 'port':80, 'debug':True, 'threaded':True, 'use_reloader':False})
     t.start()
     # app.run(host="0.0.0.0", port=8000, debug=True, threaded=True, use_reloader=False)
 
