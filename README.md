@@ -1,5 +1,5 @@
 # QRPG - A QR-Code Powered Role-Playing Game
-Framework for a simple RPG, hosted on a local waitress server w/ a flask backend
+Framework for a simple RPG, hosted on a local waitress / flask backend
 
 Includes several functionalities. Abilities are broken into python files - 
 
