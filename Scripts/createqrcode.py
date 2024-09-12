@@ -14,8 +14,8 @@ onto the decorative background
 def make():
     if not debug:
         ip_address = check_output(['hostname', '-I'])[:-2].decode()
-        #full_ip_address = 'http:/' + ip_address + ':80/'
-        full_ip_address = 'https://tinyurl.com/srvrlr' # redirects to lemurnet.wireless.duke.edu
+        full_ip_address = 'http:/' + ip_address + ':80/'
+        # full_ip_address = 'https://tinyurl.com/srvrlr' # redirects to lemurnet.wireless.duke.edu
     else:
         import socket
         ip_address = socket.gethostbyname(socket.gethostname())
